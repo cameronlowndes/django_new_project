@@ -1,0 +1,38 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+    <div class="content-section vh-100 d-flex align-items-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card shadow-lg border-light">
+                        <div class="card-body p-5">
+                            <h2 class="mb-4">Join Today</h2>
+                            <form method="POST">
+                                {% csrf_token %}
+                                <fieldset class="form-group">
+                                    <legend class="border-bottom mb-4">Create Your Account</legend>
+                                    
+                                    <!-- Form fields -->
+                                    {{ form.as_p }}  <!-- This will render all fields in a vertical layout without centering -->
+                                </fieldset>
+
+                                <!-- Sign Up Button -->
+                                <div class="form-group">
+                                    <button class="btn btn-primary btn-lg btn-block" type="submit">Sign Up</button>
+                                </div>
+                            </form>
+
+                            <!-- Already have an account? -->
+                            <div class="border-top pt-3">
+                                <small class="text-muted">
+                                    Already have an account? <a class="text-primary" href="#">Sign In</a>
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

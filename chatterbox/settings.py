@@ -11,7 +11,8 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 # Installed applications
 INSTALLED_APPS = [
-    'blog.apps.BlogConfig',  # Correct app path
+    'users.apps.UsersConfig',
+    'blog.apps.BlogConfig', 
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -19,6 +20,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+
 
 # Middleware
 MIDDLEWARE = [
@@ -81,3 +84,6 @@ STATIC_URL = 'static/'
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
