@@ -4,7 +4,7 @@
         <form method="POST" novalidate>
             {% csrf_token %}
             <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Join Today</legend>
+                <legend class="border-bottom mb-4">Login Today</legend>
                 
                 <!-- Render form fields manually -->
                 {% for field in form %}
@@ -22,14 +22,14 @@
 
             <!-- Submit Button -->
             <div class="form-group">
-                <button class="btn btn-outline-info btn-block" type="submit">Sign Up</button>
+                <button class="btn btn-outline-info btn-block" type="submit">Login</button>
             </div>
         </form>
 
         <!-- Sign In Section -->
         <div class="border-top pt-3">
             <small class="text-muted">
-                Already Have An Account? <a class="ml-2" href="{% url 'login'%}">Sign In</a>
+                Need An Account? <a class="ml-2" href="{% url 'register'%}">Sign Up Now</a>
             </small>
         </div>
     </div>

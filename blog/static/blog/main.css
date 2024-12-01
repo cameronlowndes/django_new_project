@@ -1,84 +1,249 @@
+/* General Styling */
 body {
-    background: #fafafa;
-    color: #333333;
-    margin-top: 5rem;
+  background: #f4f6f9; /* Soft gray-blue for a clean, modern feel */
+  color: #333333;
+  margin-top: 5rem;
+  font-family: 'Poppins', Arial, sans-serif; /* Modern sans-serif font */
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #2c3e50; /* Darker text color for headers */
+  font-weight: 600;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none; /* Remove bullet points */
+}
+
+/* Navbar Styling */
+.bg-steel {
+  background-color: #374a59; /* Dark steel blue */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.site-header .navbar-nav .nav-link {
+  color: #cbd5db;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+  color: #ffffff;
+  text-shadow: 0 1px 4px rgba(255, 255, 255, 0.4); /* Glowing hover effect */
+}
+
+.site-header .navbar-nav .nav-link.active {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* Content Section Styling */
+.content-section {
+  background: #ffffff;
+  padding: 20px 30px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px; /* Rounded corners for modern design */
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content-section:hover {
+  transform: translateY(-4px); /* Slight lift on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Enhance shadow on hover */
+}
+
+/* Article Styling */
+.article-title {
+  color: #34495e; /* Dark blue-gray */
+  font-size: 1.5rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+a.article-title:hover {
+  color: #3498db; /* Bright blue for hover state */
+  text-decoration: underline;
+}
+
+.article-content {
+  white-space: pre-line;
+  font-size: 1rem;
+  color: #555555; /* Softer gray for readability */
+}
+
+.article-img {
+  height: 75px;
+  width: 75px;
+  margin-right: 16px;
+  border-radius: 8px; /* Rounded edges for images */
+  object-fit: cover; /* Ensure images are cropped properly */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.article-metadata {
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #e3e3e3;
+  font-size: 0.9rem;
+  color: #888888; /* Lighter gray for metadata */
+}
+
+.article-metadata a {
+  color: #3498db;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.article-metadata a:hover {
+  color: #1d6fa5; /* Slightly darker blue for hover */
+  text-decoration: underline;
+}
+
+.article-svg {
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  fill: #5f788a; /* Match with bg-steel */
+  transition: fill 0.3s ease;
+}
+
+.article-svg:hover {
+  fill: #3498db; /* Bright blue on hover */
+}
+
+/* Account Section Styling */
+.account-img {
+  height: 125px;
+  width: 125px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+  border-radius: 50%; /* Circular avatar */
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.account-img:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.account-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for text */
+}
+
+/* Blog Posts Container */
+.blog-posts {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Individual Post Card */
+.post-card {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Metadata Styling */
+.article-metadata {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: #888888;
+}
+
+.author-link {
+  color: #3498db; /* Bright blue for the author's name */
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.author-link:hover {
+  color: #1d6fa5; /* Slightly darker blue on hover */
+  text-decoration: underline;
+}
+
+.post-date {
+  font-size: 0.8rem;
+  color: #aaaaaa; /* Subtle gray for the date */
+}
+
+/* Post Title */
+.article-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2c3e50; /* Dark gray-blue */
+  margin-bottom: 10px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.article-title:hover {
+  color: #e67e22; /* Orange hover effect for the title */
+  text-decoration: underline;
+}
+
+/* Post Content */
+.article-content {
+  font-size: 1rem;
+  color: #555555; /* Softer gray for readability */
+  line-height: 1.6;
+}
+
+.footer {
+  background-color: #5f788a; /* Matches navbar background */
+  color: #cbd5db;
+}
+
+.footer h5 {
+  font-weight: bold;
+}
+
+.footer a {
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.footer .fab {
+  font-size: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .post-card {
+      padding: 15px;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
-    color: #444444;
-  }
-  
-  ul {
-    margin: 0;
-  }
-  
-  .bg-steel {
-    background-color: #5f788a;
-  }
-  
-  .site-header .navbar-nav .nav-link {
-    color: #cbd5db;
-  }
-  
-  .site-header .navbar-nav .nav-link:hover {
-    color: #ffffff;
-  }
-  
-  .site-header .navbar-nav .nav-link.active {
-    font-weight: 500;
-  }
-  
-  .content-section {
-    background: #ffffff;
-    padding: 10px 20px;
-    border: 1px solid #dddddd;
-    border-radius: 3px;
-    margin-bottom: 20px;
-  }
-  
+
   .article-title {
-    color: #444444;
+      font-size: 1.3rem;
   }
-  
-  a.article-title:hover {
-    color: #428bca;
-    text-decoration: none;
-  }
-  
+
   .article-content {
-    white-space: pre-line;
+      font-size: 0.9rem;
   }
-  
-  .article-img {
-    height: 65px;
-    width: 65px;
-    margin-right: 16px;
-  }
-  
-  .article-metadata {
-    padding-bottom: 1px;
-    margin-bottom: 4px;
-    border-bottom: 1px solid #e3e3e3
-  }
-  
-  .article-metadata a:hover {
-    color: #333;
-    text-decoration: none;
-  }
-  
-  .article-svg {
-    width: 25px;
-    height: 25px;
-    vertical-align: middle;
-  }
-  
-  .account-img {
-    height: 125px;
-    width: 125px;
-    margin-right: 20px;
-    margin-bottom: 16px;
-  }
-  
-  .account-heading {
-    font-size: 2.5rem;
-  }
+}
