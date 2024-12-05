@@ -19,3 +19,6 @@ def register(request):
 class CustomLogoutView(LogoutView):
     template_name = 'users/custom_logout.html'  # Custom template
     next_page = reverse_lazy('login')  # Redirect after logout
+
+def profile(request):
+    return render (request, 'users/profile.html')
