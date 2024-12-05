@@ -1,63 +1,10 @@
+<!-- users/logout.html -->
 {% extends "blog/base.html" %}
 
 {% block content %}
     <h2>You have been logged out</h2>
-
-    <!-- Overlay for logout success message -->
-    <div id="logout-overlay" class="overlay">
-        <div class="overlay-content">
-            <h4>Logout Successful</h4>
-            <p>You have successfully logged out.</p>
-            <a href="{% url 'login' %}" class="btn btn-primary">Sign In Again!</a>
-        </div>
-    </div>
-
-    <div class="border-top pt-3">
-        <small class="text-muted">
-            <a class="ml-2" href="{% url 'login' %}">Sign In Again!</a>
-        </small>
-    </div>
-{% endblock %}
-
-{% block extra_css %}
-    <style>
-        /* Styling the overlay */
-        .overlay {
-            display: none;  /* Hidden by default */
-            position: fixed;
-            z-index: 1;  /* Sit on top */
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7); /* Black with opacity */
-            color: white;
-            text-align: center;
-            padding-top: 20%;
-        }
-
-        .overlay-content {
-            background-color: #333;
-            padding: 20px;
-            border-radius: 8px;
-            display: inline-block;
-        }
-
-        /* Show the overlay when message is present */
-        .overlay.show {
-            display: block;
-        }
-    </style>
-{% endblock %}
-
-{% block extra_js %}
-    <script>
-        // Show the overlay after the user has logged out successfully
-        window.onload = function() {
-            // Check if the logout success message is present
-            if ("{{ messages|escapejs }}".includes("You have been successfully logged out!")) {
-                document.getElementById('logout-overlay').classList.add('show');
-            }
-        }
-    </script>
-{% endblock %}
+    <form method="POST" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-link">Logout</button>
+    </form>
+{% endblock content %}

@@ -1,35 +1,48 @@
 {% extends "blog/base.html" %}
 {% block content %}
     <div class="content-section">
-        <form method="POST" novalidate>
+        <form method="POST">
             {% csrf_token %}
             <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Login Today</legend>
-                
-                <!-- Render form fields manually -->
-                {% for field in form %}
+                <legend class="border-bottom mb-4">Log In</legend>
+                <!-- Render each form field manually -->
                 <div class="form-group">
-                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-                    {{ field }}
-                    {% if field.errors %}
-                    <div class="text-danger">
-                        {{ field.errors }}
-                    </div>
+                    <label for="id_username">Username</label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="id_username" 
+                        name="username" 
+                        value="{{ form.username.value }}" 
+                        required>
+                    {% if form.username.errors %}
+                        <small class="text-danger">
+                            {{ form.username.errors.0 }}
+                        </small>
                     {% endif %}
                 </div>
-                {% endfor %}
+                <div class="form-group">
+                    <label for="id_password">Password</label>
+                    <input 
+                        type="password" 
+                        class="form-control" 
+                        id="id_password" 
+                        name="password" 
+                        required>
+                    {% if form.password.errors %}
+                        <small class="text-danger">
+                            {{ form.password.errors.0 }}
+                        </small>
+                    {% endif %}
+                </div>
             </fieldset>
-
-            <!-- Submit Button -->
             <div class="form-group">
-                <button class="btn btn-outline-info btn-block" type="submit">Login</button>
+                <button class="btn btn-outline-info" type="submit">Login</button>
             </div>
         </form>
-
-        <!-- Sign In Section -->
         <div class="border-top pt-3">
             <small class="text-muted">
-                Need An Account? <a class="ml-2" href="{% url 'register'%}">Sign Up Now</a>
+                Need An Account? <a class="ml-2" href="{% url 'register' %}">Sign Up Now</a>
             </small>
         </div>
     </div>
