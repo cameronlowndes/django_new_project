@@ -2,9 +2,10 @@
 {% extends "blog/base.html" %}
 
 {% block content %}
-    <h2>You have been logged out</h2>
-    <form method="POST" action="{% url 'logout' %}">
-        {% csrf_token %}
-        <button type="submit" class="btn btn-link">Logout</button>
-    </form>
+<form action="{%url 'logout'%}" method="POST" style="display: inline;">
+    {% crsf_token%}
+    <button type="submit" class="btn btn-link nav-item nav-link">
+        logout
+    </button>
+</form>
 {% endblock content %}
