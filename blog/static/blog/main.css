@@ -233,6 +233,61 @@ a.article-title:hover {
   font-size: 1.5rem;
 }
 
+/* Ensure email text is fully visible and wrapped */
+.custom-email-field {
+  font-size: 18px; /* Increase the font size for better readability */
+  padding: 10px; /* Add padding for spacing */
+  margin-bottom: 15px; /* Add space between the email and other elements */
+  word-wrap: break-word; /* Allow long email to break into a new line */
+  overflow-wrap: break-word; /* Same as word-wrap, but more specific */
+  max-width: 100%; /* Ensure the field doesn't overflow */
+  white-space: normal; /* Allow text to break normally */
+}
+
+/* Style the email field in the form */
+.custom-field input, .custom-email-field input {
+  width: 100%; /* Take full width */
+  height: 45px; /* Increase the height */
+  font-size: 18px; /* Increase the font size */
+  padding: 10px; /* Add padding inside the input */
+  box-sizing: border-box; /* Include padding and border in width/height */
+}
+
+/* Make sure the text in the form input is also properly visible */
+input[type="email"] {
+  width: 100%; /* Ensure full width */
+  height: 45px; /* Set height for better visibility */
+  font-size: 18px; /* Set font size */
+  padding: 10px; /* Add padding */
+  box-sizing: border-box; /* Include padding and border in width/height */
+}
+
+
+/* Custom class for form-group to make the fields bigger */
+.custom-form-group input,
+.custom-form-group select,
+.custom-form-group textarea {
+    font-size: 18px;        /* Increase font size */
+    padding: 15px;          /* Add padding inside the fields */
+    width: 100%;            /* Make the fields fill the container */
+    height: 100px;           /* Increase the height of the fields */
+    margin-bottom: 20px;    /* Add space between the fields */
+    box-sizing: border-box; /* Include padding and border in width/height */
+}
+
+/* Optional: Adjust the label font size */
+.custom-form-group label {
+    font-size: 16px;        /* Make label size slightly larger */
+    font-weight: bold;      /* Make label text bold for better readability */
+}
+
+
+/* Optional: Adjust the label font size */
+.form-group label {
+    font-size: 16px;        /* Adjust label size for consistency */
+}
+
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .post-card {

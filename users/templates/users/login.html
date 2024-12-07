@@ -5,7 +5,8 @@
             {% csrf_token %}
             <fieldset class="form-group">
                 <legend class="border-bottom mb-4">Log In</legend>
-                <!-- Render each form field manually -->
+                
+                <!-- Username Field -->
                 <div class="form-group">
                     <label for="id_username">Username</label>
                     <input 
@@ -21,14 +22,24 @@
                         </small>
                     {% endif %}
                 </div>
+
+                <!-- Password Field with Show/Hide Toggle -->
                 <div class="form-group">
                     <label for="id_password">Password</label>
-                    <input 
-                        type="password" 
-                        class="form-control" 
-                        id="id_password" 
-                        name="password" 
-                        required>
+                    <div class="password-wrapper">
+                        <input 
+                            type="password" 
+                            class="form-control" 
+                            id="id_password" 
+                            name="password" 
+                            required>
+                        <button 
+                            type="button" 
+                            class="btn btn-sm btn-outline-secondary" 
+                            onclick="togglePasswordVisibility('id_password')">
+                            Show
+                        </button>
+                    </div>
                     {% if form.password.errors %}
                         <small class="text-danger">
                             {{ form.password.errors.0 }}
@@ -36,14 +47,34 @@
                     {% endif %}
                 </div>
             </fieldset>
+
+            <!-- Submit Button -->
             <div class="form-group">
                 <button class="btn btn-outline-info" type="submit">Login</button>
             </div>
         </form>
+
+        <!-- Sign Up Section -->
         <div class="border-top pt-3">
             <small class="text-muted">
                 Need An Account? <a class="ml-2" href="{% url 'register' %}">Sign Up Now</a>
             </small>
         </div>
     </div>
+
+    <script>
+        // JavaScript function to toggle password visibility
+        function togglePasswordVisibility(fieldId) {
+            const passwordField = document.getElementById(fieldId);
+            const toggleButton = event.target;
+
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                toggleButton.textContent = "Hide";
+            } else {
+                passwordField.type = "password";
+                toggleButton.textContent = "Show";
+            }
+        }
+    </script>
 {% endblock content %}
