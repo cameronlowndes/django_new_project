@@ -36,13 +36,15 @@
                 {% if user.is_authenticated %}
                 <form method="POST" action="{% url 'profile' %}" class="d-inline">
                   {% csrf_token %}
-                  <button type="submit" class="btn btn-link nav-item nav-link p-1 pt-2" style="text-decoration: none;">
+                  <button type="submit" class="btn btn-link nav-item nav-link p-1 pt-2" style="text-decoration: none; outline: none; background-color: transparent;">
                     Go to Profile
-                  </button>
+                </button>
+                
+                
                 </form>                
                 <form method="POST" action="{% url 'logout' %}" class="d-inline">
                   {% csrf_token %}
-                  <button type="submit" class="btn btn-link nav-item nav-link p-1 pt-2" style="text-decoration: none;">Logout</button>
+                  <button type="submit" class="btn btn-link nav-item nav-link p-1 pt-2" style="text-decoration: none; outline: none; background-color: transparent;">Logout</button>
                 </form>
                 {% else %}
                     <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
